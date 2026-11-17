@@ -1,0 +1,15 @@
+# Copy to contacts.yaml. Names are case-insensitive. Phone numbers: with country code.
+contacts:
+  sara:
+    email: sara@example.com
+    whatsapp: "+20 100 123 4567"
+  omar:
+    email: omar@example.com
+    whatsapp: "+201112223334"
+
+groups:
+  team:
+    members: [sara, omar]        # pulls in their email + WhatsApp
+  family:
+    emails: [mom@example.com, dad@example.com]
+    whatsapp: ["+201001112223", "+201004445556"]

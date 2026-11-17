@@ -1,0 +1,17 @@
+# systemd unit for running without Docker.
+# Install: sudo cp deploy/personal-bot.service /etc/systemd/system/
+#          sudo systemctl daemon-reload && sudo systemctl enable --now personal-bot
+[Unit]
+Description=Personal Telegram bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=bot
+WorkingDirectory=/opt/My-Personal-Bot-
+ExecStart=/opt/My-Personal-Bot-/.venv/bin/python -m bot
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
